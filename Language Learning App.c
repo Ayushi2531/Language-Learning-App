@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-// Vocabulary data
 typedef struct {
     char word[50];
     char translation[50];
@@ -26,7 +24,6 @@ void vocabulary_quiz() {
     printf("Translate the following words into Spanish:\n");
     printf("--------------------\n");
 
-    // Randomize the order of the words
     for (int i = 0; i < NUM_WORDS; i++) {
         int j = rand() % NUM_WORDS;
         Vocabulary temp = vocabulary[i];
@@ -42,7 +39,6 @@ void vocabulary_quiz() {
         char user_translation[50];
         scanf("%s", user_translation);
 
-        // Convert the user's input to lowercase for case-insensitive comparison
         for (int j = 0; user_translation[j]; j++) {
             user_translation[j] = tolower(user_translation[j]);
         }
@@ -62,10 +58,9 @@ void vocabulary_quiz() {
 }
 
 int main() {
-    // Seed the random number generator
+    
     srand(time(NULL));
 
-    // Run the vocabulary quiz
     vocabulary_quiz();
 
     return 0;
